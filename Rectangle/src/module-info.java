@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Retangle {
+module Rectangle {
 }
