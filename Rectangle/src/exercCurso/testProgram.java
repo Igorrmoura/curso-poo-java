@@ -2,6 +2,7 @@ package exercCurso;
 
 import java.util.Locale;
 import java.util.Scanner;
+
 import entidade.retangulo;
 
 public class testProgram {

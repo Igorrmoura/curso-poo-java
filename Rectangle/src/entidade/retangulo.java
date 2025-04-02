@@ -1,8 +1,8 @@
 package entidade;
 
 public class retangulo {
-
-	 public double width; 
+	
+	public double width; 
 	 public double height; 
 	  
 	 public double area() { 
@@ -16,7 +16,5 @@ public class retangulo {
 	 public double diagonal() { 
 	  return Math.sqrt(width * width + height * height); 
 	 } 
-	 
-	} 
 
-
+}
