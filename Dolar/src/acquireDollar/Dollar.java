@@ -7,9 +7,9 @@ import currencyConverter.Converted;
 public class Dollar {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
-		
+		Scanner sc = new Scanner(System.in);
+	
 		
 		System.out.println("whats is the dollar price: ");
 		double priceDollar = sc.nextDouble();
