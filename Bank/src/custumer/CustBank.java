@@ -47,6 +47,10 @@ public class CustBank {
 	public void withdraw(double amount) {
 		balance -= amount + 5.0;
 	}
+	
+	public String tostring() {
+		return "bank"  + number + ", titular" + titular + ", balance: $" + String.format("%.2f", balance);
+	}
 
 
 }
