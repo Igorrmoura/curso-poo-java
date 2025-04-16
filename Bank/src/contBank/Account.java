@@ -8,18 +8,19 @@ public class Account {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		CustBank bank = new CustBank();
+		CustBank bank = new CustBank(number, titular, balance);
 		
 		System.out.print("informe o numero da conta: ");
-		bank.number = sc.nextDouble();
+		int number = sc.nextInt();
 		System.out.print("informe o nome da conta: ");
-		bank.name = sc.next();
+		String titular = sc.next();
 		System.out.print("valor a ser depositado: ");
-		bank.deposito = sc.nextDouble();
+		double balance = sc.nextDouble();
+				
 		
-		System.out.println("conta: " + bank.number + ", " + "nome: " + bank.name + ", " + "valor na conta: " + bank.totalcont());
-
-
+		
+		
+		
 	}
 
 }

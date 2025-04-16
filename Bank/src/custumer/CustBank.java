@@ -2,24 +2,51 @@ package custumer;
 
 public class CustBank {
 	
-	public String name;
-	public double number;
-	public double deposito;
-	private double cont = 500;
+	private String titular;
+	private int number;
+	private double balance;
 	
-	public double totalcont() {
-		return deposito + cont;
+	
+	public CustBank(String titular, int number) {
+		this.titular = titular;
+		this.number = number;
+	}
+	
+	
+	public CustBank(String titular, int number, double inicialdeposit) {
+		super();
+		this.titular = titular;
+		this.number = number;
+		deposit(inicialdeposit);
 	}
 
-	public double getCont() {
-		return cont;
+
+	public String getTitular() {
+		return titular;
 	}
 
-	public void setCont(double cont) {
-		this.cont = cont;
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+
+	public int getNumber() {
+		return number;
+	}
+
+
+	public double getBalance() {
+		return balance;
 	}
 	
+	public void deposit(double amount) {
+		balance += amount;
+	}
 	
-	
+	public void withdraw(double amount) {
+		balance -= amount + 5.0;
+	}
+
 
 }
