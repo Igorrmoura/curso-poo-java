@@ -24,10 +24,25 @@ public class Account {
 			bank = new CustBank(titular, number, inicialdeposit);
 		} 
 		else {
-			bank = new CustBank(titular, number);
+			bank = new CustBank (titular, number);
 		}
 		
 		System.out.println();
+		System.out.println("Account data: ");
+		System.out.println(bank);
+		
+		System.out.println();
+		System.out.println("digite o valor de deposito: ");
+		double depositValue = sc.nextDouble();
+		bank.deposit(depositValue);
+		System.out.println("updated account data: ");
+		System.out.println(bank);
+		
+		System.out.println();
+		System.out.print("Enter a withdraw value: ");
+		double withdrawValue = sc.nextDouble();
+		bank.withdraw(withdrawValue);
+		System.out.println("Updated account data:");
 		System.out.println(bank);
 				
 		

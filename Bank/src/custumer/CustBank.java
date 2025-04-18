@@ -49,7 +49,12 @@ public class CustBank {
 	}
 	
 	public String tostring() {
-		return "bank"  + number + ", titular" + titular + ", balance: $" + String.format("%.2f", balance);
+		return "CustBank" +
+				+ number
+				+ ", Holder: "
+				+ titular
+				+ ", Balance: $ "
+				+ String.format("%.2f", balance);
 	}
 
 
