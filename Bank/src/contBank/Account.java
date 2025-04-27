@@ -39,7 +39,7 @@ public class Account {
 		System.out.println(bank);
 		
 		System.out.println();
-		System.out.print("Enter a withdraw value: ");
+		System.out.print("digite o valor de retirada: ");
 		double withdrawValue = sc.nextDouble();
 		bank.withdraw(withdrawValue);
 		System.out.println("Updated account data:");

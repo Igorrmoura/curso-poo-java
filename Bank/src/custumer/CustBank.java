@@ -49,7 +49,7 @@ public class CustBank {
 	}
 	
 	public String tostring() {
-		return "CustBank" +
+		return "Bank" +
 				+ number
 				+ ", Holder: "
 				+ titular
