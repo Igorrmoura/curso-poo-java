@@ -24,11 +24,23 @@ public class Productss {
 		}
 		
 		soma = 0;
-		double sum = 0.0;
 		for (int i = 0; i<vect.length; i++) {
 			soma = soma + vect[i];
 		}
+		
+		media = soma / n;
+		
+		System.out.print("VALORES = ");
+		
+		for (int i = 0; i<vect.length; i++) {
+			System.out.printf("%.1f  ", vect[i]);
+		}
+		
+		System.out.printf("\nSOMA = %.2f\n", soma);
+	    System.out.printf("MEDIA = %.2f\n", media);
 
+
+	    sc.close();
 	}
 
 }
