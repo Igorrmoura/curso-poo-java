@@ -35,6 +35,11 @@ public class Employee {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
+
+	public void increaseSalary(double percentage) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
