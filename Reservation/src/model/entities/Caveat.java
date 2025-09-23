@@ -39,9 +39,19 @@ public class Caveat {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 	
-	public void updateDates(Date checkIn, Date checkOut) {
+	public String updateDates(Date checkIn, Date checkOut) {
+		
+		Date now = new Date();
+		if (checkIn.before(now) || checkOut.before(now)) {
+			return "reservation: Reservation dates for updatemust be future dates";
+			
+		} if (!checkOut.after(checkIn)) {
+			return "Check-out date must beafter check-in date";
+		}
+		
 		this.checkIn = checkIn;
 		this.checkOut = checkOut; 
+		return null;
 	}
 	
 	@Override
