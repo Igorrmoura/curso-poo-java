@@ -10,11 +10,11 @@ import model.exceptions.DomainException;
 
 public class Program {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Scanner sc = new Scanner(System.in);
-		
+
 		try {
 			System.out.print("Room Number: ");
 			int number = sc.nextInt();
@@ -22,28 +22,31 @@ public class Program {
 			Date checkIn = sdf.parse(sc.next());
 			System.out.print("Check-out date (dd/MM/yyyy): ");
 			Date checkOut = sdf.parse(sc.next());
-	
+
 			Caveat reserv = new Caveat(number, checkIn, checkOut);
 			System.out.println("reservation: " + reserv);
-	
+
 			System.out.println();
 			System.out.println("Enter data to update the reservation");
 			System.out.print("check-in data (dd/MM/yyyy): ");
 			checkIn = sdf.parse(sc.next());
 			System.out.print("check-out data (dd/MM/yyyy): ");
 			checkOut = sdf.parse(sc.next());
-	
-			 reserv.updateDates(checkIn, checkOut);
-				System.out.println("reservation: " + reserv);
+
+			reserv.updateDates(checkIn, checkOut);
+			System.out.println("reservation: " + reserv);
 		}
-		
+
 		catch (ParseException e) {
 			System.out.println("invalid date format");
-		}
+		} 
 		catch (DomainException e) {
 			System.out.println("Error in reservation: " + e.getMessage());
+		} 
+		catch (RuntimeException e) {
+			System.out.println("Unexpected error");
 		}
+		sc.close();
 	}
 
 }
-
