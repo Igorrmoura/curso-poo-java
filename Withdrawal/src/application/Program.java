@@ -3,28 +3,33 @@ package application;
 import java.util.Scanner;
 
 import entities.Account;
+import exceptions.BusinessExceptions;
 
 public class Program {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Enter account data: ");
-		int number = sc.nextInt();
-		System.out.println("holder of acoount: ");
-		String holder = sc.next();
-		System.out.println("saldo inicial: ");
-		double initialBalance = sc.nextDouble();
-		System.out.println("limite de saque");
-		double withdrawLimit = sc.nextDouble();
-		
-		Account acc = new Account(number, holder, initialBalance, withdrawLimit);
-		
-		System.out.println("Enter amount for withdraw: ");
-		double withdraw = sc.nextDouble();
-		
-		acc.withdraw(initialBalance);
 
+		System.out.print("Enter account data: ");
+		int number = sc.nextInt();
+		System.out.print("holder of account: ");
+		String holder = sc.next();
+		System.out.print("saldo inicial: ");
+		double initialBalance = sc.nextDouble();
+		System.out.print("limite de saque: ");
+		double withdrawLimit = sc.nextDouble();
+
+		Account acc = new Account(number, holder, initialBalance, withdrawLimit);
+
+		System.out.print("Enter amount for withdraw: ");
+		double amount = sc.nextDouble();
+
+		try {
+			acc.withdraw(amount);
+			System.out.println("saldo atual: " + acc.getBalance());
+		} catch (BusinessExceptions e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

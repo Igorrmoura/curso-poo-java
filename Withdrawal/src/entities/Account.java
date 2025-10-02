@@ -1,6 +1,7 @@
 package entities;
 
 import application.Program;
+import exceptions.BusinessExceptions;
 
 public class Account {
 
@@ -8,9 +9,9 @@ public class Account {
 	private String holder;
 	private Double balance;
 	private Double withdrawLimit;
-	
+
 	public Account() {
-		
+
 	}
 
 	public Account(Integer number, String holder, Double balance, Double withdrawLimit) {
@@ -53,7 +54,18 @@ public class Account {
 	}
 
 	public void withdraw(double amount) {
+		validWithdraw(amount);
 		balance -= amount;
+
+	}
+
+	private void validWithdraw(double amount) {
+		if (amount > getWithdrawLimit()) {
+			throw new BusinessExceptions("Erro! valor acima do limite de saque");
+		}
+		if (amount > getBalance()) {
+			throw new BusinessExceptions("Erro! saldo insuficiente");
+		}
 
 	}
 }
